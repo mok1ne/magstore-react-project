@@ -5,7 +5,7 @@ import { addItem, minusItem, removeItem } from '../../redux/slices/cartSlice';
 
 import { IoMdClose } from "react-icons/io";
 
-const BagItem = ({ id, title, price, image, rom, color, count }) => {
+const BagItem = ({ id, title, price, image, rom, color, noice, count }) => {
     const dispatch = useDispatch()
 
     const onClickPlus = () => {
@@ -14,6 +14,7 @@ const BagItem = ({ id, title, price, image, rom, color, count }) => {
                 id,
                 rom,
                 color,
+                
             }))
     }
     const onClickMinus = () => {
@@ -43,7 +44,8 @@ const BagItem = ({ id, title, price, image, rom, color, count }) => {
                 <div className="bag__middle">
                     <h3>{title}</h3>
                     <div className="bag__middle-info">
-                        <p>Память: {rom >= 1 && rom <= 10 ? `${rom}TB` : `${rom}GB`}</p>
+                        {rom == null ? '' : <p>Память: {rom >= 1 && rom <= 10 ? `${rom}TB` : `${rom}GB`}</p>}
+                        {noice == null ? '' : <p>Шумоподавление: {noice}</p>}
                         <p>Цвет: {color}</p>
                         <p>Количество: {count}</p>
                         <div className="bag__text">

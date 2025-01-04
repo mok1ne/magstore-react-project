@@ -28,18 +28,11 @@ const ShopCards = ({ data }) => {
         });
         setFilteredData(filtered);
     };
-
-
-
-
-
     const ratingSort = () => {
         const sorterArr = [...filteredData];
         sorterArr.sort((a, b) => b.rating - a.rating);
         setFilteredData(sorterArr);
     };
-
-
     const priceSortLowest = () => {
         const sorterArr = [...filteredData];
         sorterArr.sort((a, b) => {
@@ -49,7 +42,6 @@ const ShopCards = ({ data }) => {
         });
         setFilteredData(sorterArr);
     };
-
     const priceSortHigh = () => {
         const sorterArr = [...filteredData];
         sorterArr.sort((a, b) => {
@@ -59,20 +51,14 @@ const ShopCards = ({ data }) => {
         });
         setFilteredData(sorterArr);
     };
-
-
-
     const handleAddToCart = (product) => {
         setSelectedProduct(product);
         setIsModalOpen(true);
     };
-
     const closeModal = () => {
         setIsModalOpen(false);
         setSelectedProduct(null);
     };
-
-
 
     return (
         <div className="shop">
@@ -116,14 +102,17 @@ const ShopCards = ({ data }) => {
                                     <h3>{item.title}</h3>
                                     {item.configure.map((config, index) => (
                                         <div className="shop__middle" key={index}>
-                                            <p>Экран: {config.screen}</p>
-                                            <p>Память: {config.ROM >= 1 && config.ROM <= 10 ? `${config.ROM}TB` : `${config.ROM}GB`} ROM / {config.RAM} ГБ RAM</p>
+                                            {config.type == null ? '' : <p>Тип: {config.type}</p>}
+                                            {config.screen == null ? '' : <p>Экран: {config.screen}</p>}
+                                            {config.ROM == null ? '' : <p>Память: {config.ROM >= 1 && config.ROM <= 10 ? `${config.ROM}TB` : `${config.ROM}GB`} ROM / {config.RAM} ГБ RAM</p>}
                                             {config.camera == null ? '' : <p>Камера: {config.camera}</p>}
                                             {config.batery == null ? '' : <p>Батарея: {config.batery}</p>}
                                             {config.videocard == null ? '' : <p>Видеокарта: {config.videocard}</p>}
-                                            <p>Процессор: {config.processor}</p>
+                                            {config.processor == null ? '' : <p>Процессор: {config.processor}</p>}
                                             {config.colors == null ? '' : <p>Цвета: {config.colors}</p>}
                                             {config.weight == null ? '' : <p>Вес: {config.weight}</p>}
+                                            {config.noice == null ? '' : <p>Шумоподавление: {config.noice}</p>}
+                                            {config.construction == null ? '' : <p>Конструкция: {config.construction}</p>}
                                             <h6>Рейтинг: {item.rating}</h6>
                                         </div>
                                     ))}
@@ -131,7 +120,7 @@ const ShopCards = ({ data }) => {
                             </div>
                             <div className="shop__bottom">
                                 <div className="shop__bottom-text">
-                                    <p>Цена: {item.prices[defaultConfig.ROM]} ₽</p>
+                                    <p>Цена: {item.prices[defaultConfig.ROM] == null ? `${item.price}` : `${item.prices[defaultConfig.ROM]}`} ₽</p>
                                     <p>Доставка: Завтра - послезавтра</p>
                                 </div>
                                 <button onClick={() => handleAddToCart(item)}>В корзину</button>

@@ -1,38 +1,37 @@
 const headphonesData = [
     {
         id: 1,
-        rating: 99,
-        image: "/src/assets/images/laptops/MacBook Space Black.jpg",
-        title: "Apple MacBook Pro 16",
+        rating: 92,
+        image: "/src/assets/images/products/headphones.jpg",
+        title: "Apple AirPods Max",
 
         configure: [
             {
-                screen: "16.2 (3456×2234) Liquid Retina XDR 120 Гц",
-                ROM: 1,
-                RAM: 48,
-                videocard: "Apple graphics 40-core, SMA",
-                processor: "Apple M3 Max",
-                colors: "Space Black, Space Gray",
-            },
-        ],
-        romShop: [
-            {
-                roms: [
-
-                    1,
-                ],
+                type: 'Беспроводные наушники',
+                colors: "Silver, Space Gray, Sky Blue, Pink, Green, Midnight, Starlight, Blue, Purple, Orange",
+                weight: "384.8 г",
+                noice: 'Есть',
+                construction: "Полноразмерные",
             },
         ],
         colorShop: [
             {
                 colors: [
-                    { image: "/src/assets/images/laptops/MacBook Space Black.jpg", name: "Space Black" },
-                    { image: "/src/assets/images/laptops/MacBook Space Gray.jpg", name: "Space Gray" },
+                    { image: "/src/assets/images/products/headphones.jpg", name: "Silver" },
                 ]
             }
         ],
+        romShop: [
+            {
+                roms: [
 
-        price: 550000,
+                ],
+            },
+        ],
+        prices: {
+        },
+
+        price: 55000
 
     },
 ]

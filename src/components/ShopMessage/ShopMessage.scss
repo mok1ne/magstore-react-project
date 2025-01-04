@@ -26,13 +26,15 @@
 
         img {
             max-width: 200px;
+            margin-right: 15px;
         }
     }
+
 
     &__item {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
     }
 }
 
