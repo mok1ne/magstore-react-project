@@ -1,0 +1,197 @@
+.info__cards {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    a:nth-child(1) .info__card-wrapper {
+        position: absolute;
+        width: 100%;
+        background-image: url(../../assets/images/Home/hero_iphone16pro_large.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 1;
+    }
+
+    a:nth-child(2) .info__card-wrapper {
+        position: absolute;
+        width: 100%;
+        background-image: url(../../assets/images/Home/hero_iphone16_large.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 2;
+    }
+
+    .info__card {
+        height: var(--content-height);
+        width: 100%;
+        color: var(--white);
+        position: relative;
+
+
+        &-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            padding: 50px 0;
+
+            h3 {
+                position: relative;
+                z-index: 10;
+                font-size: 56px;
+                line-height: 1.07143;
+                font-weight: 600;
+                letter-spacing: -.005em;
+            }
+
+            p {
+                font-size: 28px;
+                line-height: 1.14286;
+                font-weight: 400;
+                letter-spacing: .007em;
+                margin-top: 6px;
+            }
+
+
+        }
+
+
+        &-btn {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+
+
+            .info-btn {
+                padding: 11px 21px;
+                border-radius: 25px;
+                text-align: center;
+                font-size: 16px;
+                font-weight: 400;
+
+                &-blue {
+                    background-color: var(--blue);
+                    color: var(--white);
+                    transition: all .4s ease;
+
+                    &:hover {
+                        background-color: var(--blue_hover);
+                    }
+                }
+
+                &-white {
+                    background-color: var(--white);
+                    color: var(--black);
+                    transition: all .4s ease;
+
+                    &:hover {
+                        background-color: var(--white_darkness);
+                    }
+                }
+            }
+
+            .buy-btn {
+                padding: 11px 21px;
+                background-color: transparent;
+                border-radius: 25px;
+                text-align: center;
+                font-size: 16px;
+                font-weight: 400;
+
+                &-blue {
+                    color: var(--blue);
+                    border: 1px solid var(--blue);
+                    transition: all .4s ease;
+
+                    &:hover {
+                        background-color: var(--blue_hover);
+                        color: var(--white);
+                    }
+                }
+
+                &-white {
+                    color: var(--white);
+                    border: 1px solid var(--white);
+                    transition: all .4s ease;
+
+                    &:hover {
+                        background-color: var(--white);
+                        color: var(--black);
+                    }
+                }
+            }
+        }
+
+    }
+
+}
+
+
+
+
+
+@media screen and (max-width: 1068px) {
+    .info__cards {
+        a:nth-child(1) .info__card-wrapper {
+            background-image: url(../../assets/images/Home/hero_iphone16pro_medium.jpg) !important;
+        }
+
+        a:nth-child(2) .info__card-wrapper {
+            background-image: url(../../assets/images/Home/hero_iphone16_medium.jpg) !important;
+        }
+    }
+
+    .info__card {
+
+        &-wrapper {
+            h3 {
+                font-size: 50px !important;
+            }
+
+            p {
+                font-size: 22px !important;
+            }
+        }
+
+
+    }
+}
+
+@media screen and (max-width: 734px) {
+    .info__cards {
+        a:nth-child(1) .info__card-wrapper {
+            background-image: url(../../assets/images/Home/hero_iphone16pro_small.jpg) !important;
+            justify-content: flex-end !important;
+        }
+
+        a:nth-child(2) .info__card-wrapper {
+            background-image: url(../../assets/images/Home/hero_iphone16_small.jpg) !important;
+        }
+    }
+
+    .info__card {
+        height: 500px !important;
+
+        &-wrapper {
+            h3 {
+                font-size: 44px !important;
+            }
+
+            p {
+                font-size: 18px !important;
+            }
+
+
+        }
+
+        .info-btn,
+        .buy-btn {
+            padding: 8px 15px !important;
+            font-size: 14px !important;
+        }
+
+
+    }
+}

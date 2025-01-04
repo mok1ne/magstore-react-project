@@ -1,0 +1,67 @@
+
+
+.burger__menu-style {
+    position: fixed;
+    padding: 120px 30px 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--white);
+    transition: all .5s ease;
+    top: -100vh;
+    left: 0;
+    opacity: 0;
+    z-index: 1000;
+
+
+    .logo {
+        max-width: 40px;
+        position: absolute;
+        left: 40px;
+        top: 35px;
+    }
+    button {
+        position: absolute;
+        right: 40px;
+        top: 40px;
+        background-color: transparent;
+    }
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        font-size: 20px;
+        font-weight: 600;
+
+        .header__list-burger--surfboat {
+            img {
+                width: 40px !important;
+            }
+        }
+
+        .header__list-burger {
+            a {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                font-size: 18px;
+                line-height: 14px;
+                letter-spacing: 3px;
+                color: #000000;
+
+                img {
+                    width: 60px;
+                    margin-bottom: 5px;
+
+                }
+            }
+        }
+    }
+
+    &.active {
+        top: 0;
+        visibility: visible;
+        opacity: 1;
+    }
+}

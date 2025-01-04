@@ -1,0 +1,143 @@
+.shop {
+    width: 100%;
+
+    &__sort {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .shop__btn {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            
+            .selected {
+                font-weight: 600!important;
+            }
+            
+            p {
+                font-weight: 500;
+                cursor: pointer;
+                transition: all .4s ease;
+
+            }
+        }
+
+
+    }
+
+    &__card {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 20px;
+        margin-top: 30px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.397);
+    }
+
+    &__info {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 50px;
+    }
+
+    &__image {
+        img {
+            width: 250px;
+            border-radius: 25px;
+        }
+    }
+
+    &__middle {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        h3 {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        h6 {
+            font-size: 14px;
+            font-weight: 300;
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        button {
+            background-color: var(--header_bg);
+            color: var(--white);
+            padding: 8px 0;
+            border-radius: 10px;
+            transition: all .4s ease;
+
+            &:hover {
+                background-color: #474747d8;
+            }
+        }
+
+        &-text {
+            p {
+                &:nth-child(1) {
+                    font-size: 22px;
+                    font-weight: 500;
+                    margin-bottom: 10px;
+                }
+
+                &:nth-child(2) {
+                    font-size: 18px;
+                    font-weight: 500;
+
+                }
+            }
+        }
+
+    }
+    &__no-results {
+        font-size: 40px;
+        font-weight: 600;
+        text-align: center;
+        margin-top: 100px;
+    }
+    
+}
+
+
+
+@media screen and (max-width: 1260px) {
+    .shop__info {
+        display: block;
+
+    }
+
+    .shop__bottom {
+        justify-content: end;
+        gap: 120px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .shop__card {
+        flex-direction: column;
+    }
+
+    .shop__bottom {
+        margin-top: 30px;
+        justify-content: end;
+        gap: 60px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .shop__sort {
+        display: block;
+    }
+    .shop__btn {
+        margin-top: 20px;
+    }
+}

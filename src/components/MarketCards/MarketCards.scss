@@ -1,0 +1,181 @@
+.market {
+    background-color: white;
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 12px;
+
+        a:nth-child(1) .market__card-wrapper {
+            position: absolute;
+            width: 100%;
+            height: var(--content-height);
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 1;
+            background-size: cover;
+            background-image: url(../../assets/images/home/promo_airpods_pro_2_avail__vkitqi3okwie_large_2x.jpg);
+        }
+
+        a:nth-child(2) .market__card-wrapper {
+            position: absolute;
+            width: 100%;
+            height: var(--content-height);
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 1;
+            background-size: cover;
+            background-image: url(../../assets/images/home/promo_macbook_air_m3__e43jegok3wuq_large.jpg);
+        }
+        a:nth-child(3) .market__card-wrapper {
+            position: absolute;
+            width: 100%;
+            height: var(--content-height);
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 1;
+            background-size: cover;
+            background-image: url(https://avatars.mds.yandex.net/get-mpic/12525950/2a0000018d70a881f0f3d7b51338b3d482a9/orig);
+        }
+    }
+
+    &__card {
+        position: relative;
+        width: 100%;
+        height: var(--content-height);
+        color: var(--white);
+
+        .flex-end {
+            justify-content: flex-end !important;
+        }
+
+        .black-text {
+            color: black;
+        }
+
+        &-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            text-align: center;
+            padding: 42px 0;
+
+
+
+            h3 {
+                position: relative;
+                z-index: 10;
+                font-size: 32px;
+                line-height: 1.07143;
+                font-weight: 500;
+                letter-spacing: -.005em;
+            }
+
+            p {
+                font-size: 18px;
+                line-height: 1.14286;
+                font-weight: 400;
+                letter-spacing: .007em;
+                margin-top: 6px;
+            }
+        }
+
+        &-btn {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+
+
+            .info-btn {
+                padding: 7px 15px;
+                border-radius: 20px;
+                text-align: center;
+                font-size: 14px;
+                font-weight: 300;
+
+                &-blue {
+                    background-color: var(--blue);
+                    color: var(--white);
+                    transition: all .4s ease;
+
+                    &:hover {
+                        background-color: var(--blue_hover);
+                    }
+                }
+
+                &-white {
+                    background-color: var(--white);
+                    color: var(--black);
+                    transition: all .4s ease;
+
+                    &:hover {
+                        background-color: var(--white_darkness);
+                    }
+                }
+            }
+
+            .buy-btn {
+                padding: 7px 15px;
+                background-color: transparent;
+                border-radius: 20px;
+                text-align: center;
+                font-size: 14px;
+                font-weight: 400;
+
+                &-blue {
+                    color: var(--blue);
+                    border: 1px solid var(--blue);
+                    transition: all .4s ease;
+
+                    &:hover {
+                        background-color: var(--blue_hover);
+                        color: var(--white);
+                    }
+                }
+
+                &-white {
+                    color: var(--white);
+                    border: 1px solid var(--white);
+                    transition: all .4s ease;
+
+                    &:hover {
+                        background-color: var(--white);
+                        color: var(--black);
+                    }
+                }
+            }
+        }
+
+    }
+
+}
+
+@media screen and (max-width: 1200px) {
+    .market__cards a:nth-child(1) .market__card-wrapper {
+        background-image: url(../../assets/images/home/promo_airpods_pro_2_avail__vkitqi3okwie_medium.jpg);
+    }
+
+    .market__cards a:nth-child(2) .market__card-wrapper {
+        background-image: url(../../assets/images/home/promo_macbook_air_m3__e43jegok3wuq_medium.jpg);
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .market__cards a:nth-child(1) .market__card-wrapper {
+        background-image: url(../../assets/images/home/promo_airpods_pro_2_avail__vkitqi3okwie_small_2x.jpg);
+    }
+
+    .market__cards a:nth-child(2) .market__card-wrapper {
+        background-image: url(../../assets/images/home/promo_macbook_air_m3__e43jegok3wuq_small.jpg);
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .market__cards {
+        grid-template-columns: repeat(1, 1fr)
+    }
+}
