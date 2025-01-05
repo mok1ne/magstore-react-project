@@ -20,8 +20,8 @@ const ModalWindow = ({ isModalOpen, selectedProduct, closeModal }) => {
     const noice = selectedProduct.configure[0].noice
     const construction = selectedProduct.configure[0].construction
     let currentPrice = selectedProduct.prices[selectedRom];
-    {selectedProduct.prices[selectedRom] == null ? currentPrice = selectedProduct.price : ''}
-    
+    { selectedProduct.prices[selectedRom] == null ? currentPrice = selectedProduct.price : '' }
+
 
     const onClickAdd = () => {
         const item = {
@@ -108,7 +108,7 @@ const ModalWindow = ({ isModalOpen, selectedProduct, closeModal }) => {
                     currentImage={messageData.currentImage}
                     selectedRom={messageData.rom}
                     selectedColor={messageData.color}
-                    noice = {messageData.noice}
+                    noice={messageData.noice}
                     price={currentPrice}
                 />
             )}

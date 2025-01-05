@@ -18,14 +18,14 @@
         padding: 45px 35px 20px;
         border-radius: 8px;
         text-align: center;
-    
+
         .close-btn {
             position: absolute;
             right: 10px;
             top: 10px;
             background-color: transparent;
         }
-    
+
         img {
             max-width: 250px;
         }
@@ -43,6 +43,7 @@
         flex-direction: column;
         align-items: start;
         gap: 20px;
+
         h2 {
             font-size: 30px;
             font-weight: 600;
@@ -55,29 +56,31 @@
         }
 
         .rom-btn-modal {
-                display: flex;
-                align-items: center;
-                gap: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
 
-                .selected {
-                    background-color: var(--header_bg)!important;
-                    color: var(--white);
-                }
-                
-                .rom-btn {
-                    border: 1px solid var(--header_bg);     
-                    border-radius: 5px;       
-                    background-color: transparent;
-                    padding: 2px 5px;
-                    transition: all .4s ease;
-                }
-            
+            .selected {
+                background-color: var(--header_bg) !important;
+                color: var(--white);
+            }
+
+            .rom-btn {
+                border: 1px solid var(--header_bg);
+                border-radius: 5px;
+                background-color: transparent;
+                padding: 2px 5px;
+                transition: all .4s ease;
+            }
+
         }
 
         .color-btn-modal {
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
             gap: 10px;
+
             button {
                 border: 1px solid rgba(0, 0, 0, 0.266);
                 border-radius: 10px;
@@ -89,8 +92,9 @@
                 max-width: 80px;
                 border-radius: 10px;
             }
+
             .selected {
-                border: 1px solid rgb(0, 0, 0)!important;
+                border: 1px solid rgb(0, 0, 0) !important;
             }
         }
 
@@ -113,14 +117,13 @@
 
 
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 800px) {
 
     .modal__info {
         gap: 14px;
     }
-    .modal__content {
-        padding: 25px 25px 20px;
-    }
+
+
 
     .modal__content img {
         max-width: 200px;
@@ -129,26 +132,32 @@
     .modal__info h2 {
         font-size: 24px;
     }
+
     .modal__info .color-btn-modal img {
         max-width: 70px;
     }
 }
 
 
-@media screen and (max-width: 700px){
+@media screen and (max-width: 700px) {
 
     .modal__info {
         gap: 12px;
     }
 
 
-    .modal__content img {
-        max-width: 180px;
+    .modal__content {
+        max-width: 95%;
+        min-width: 95%;
+        img {
+            max-width: 180px;
+        }
     }
 
     .modal__info h2 {
         font-size: 22px;
     }
+
     .modal__info .color-btn-modal img {
         max-width: 60px;
     }
