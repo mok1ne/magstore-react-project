@@ -1,6 +1,5 @@
-
-
 import Header from '../../components/Header/Header';
+
 import './Accessories.scss'
 
 const Accessories = () => {

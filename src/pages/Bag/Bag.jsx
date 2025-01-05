@@ -2,20 +2,19 @@ import { useSelector } from 'react-redux';
 
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-import './Bag.scss';
 import BagItem from "../../components/BagItem/BagItem";
+
+import './Bag.scss';
 
 const Bag = () => {
     const { totalPrice } = useSelector((state) => state.cart);
     const items = useSelector((state) => state.cart.items);
-
     return (
         <>
             <Header />
             <div className="bag">
                 <div className="bag__inner">
                     <h2>Корзина</h2>
-
                     {items.length === 0 ? (
                         <div className="bag__empty">
                             <p>В корзине ничего нет</p>

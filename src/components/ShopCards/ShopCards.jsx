@@ -1,14 +1,12 @@
 import React, { useState, useEffect, lazy } from 'react';
 
 import NavMenu from '../NavMenu/NavMenu';
-import './ShopCards.scss';
 const ModalWindow = lazy(() => import('../ModalWindow/ModalWindow'));
+
+import './ShopCards.scss';
 
 
 const ShopCards = ({ data }) => {
-
-
-
     const [filteredData, setFilteredData] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedProduct, setSelectedProduct] = useState(null);
@@ -18,8 +16,6 @@ const ShopCards = ({ data }) => {
         const sortedData = [...data].sort((a, b) => b.rating - a.rating);
         setFilteredData(sortedData);
     }, [data]);
-
-
     const filterByPrice = (min, max) => {
         const filtered = data.filter((item) => {
             const defaultConfig = item.configure[0];
@@ -91,8 +87,6 @@ const ShopCards = ({ data }) => {
                 {filteredData.length > 0 ? (
                     filteredData.map((item) => (
                         defaultConfig = item.configure[0],
-
-
                         <div className="shop__card" key={item.id}>
                             <div className="shop__info">
                                 <div className="shop__image">

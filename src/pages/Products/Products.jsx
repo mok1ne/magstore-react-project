@@ -1,7 +1,6 @@
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import ProductsItem from "../../components/ProductsItem/ProductsItem";
-
 import './Products.scss'
 
 const Products = () => {

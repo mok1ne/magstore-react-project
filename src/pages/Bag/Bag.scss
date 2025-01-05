@@ -1,6 +1,7 @@
 .bag {
     width: 100%;
     padding-top: 80px;
+
     .order-btn {
         display: flex;
         font-size: 18px;
@@ -82,7 +83,6 @@
         gap: 25px;
     }
 
-
     .bag__button {
         display: flex;
         justify-content: space-between;
@@ -103,7 +103,6 @@
         }
     }
 
-
     &__text {
         p {
             &:nth-child(1) {
@@ -115,11 +114,9 @@
             &:nth-child(2) {
                 font-size: 18px;
                 font-weight: 500;
-
             }
         }
     }
-
 
     &__no-results {
         font-size: 40px;
@@ -133,12 +130,7 @@
         font-size: 32px;
         text-align: center;
     }
-
 }
-
-
-
-
 
 @media screen and (max-width: 1150px) {
 
@@ -155,8 +147,6 @@
         flex-wrap: wrap;
         gap: 50px;
     }
-
-
 }
 
 @media screen and (max-width: 800px) {

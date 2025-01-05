@@ -1,7 +1,8 @@
-import './ProductsItem.scss'
 import { NavLink } from 'react-router-dom';
 
 import productsItemData from '../../data/productsItemData'
+
+import './ProductsItem.scss'
 
 const ProductsItem = () => {
     return (

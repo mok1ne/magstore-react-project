@@ -1,4 +1,3 @@
-import React, { useRef } from 'react'
 import item from '../../data/productsData/phonesData'
 import { useDispatch } from 'react-redux'
 import { addItem, minusItem, removeItem } from '../../redux/slices/cartSlice';

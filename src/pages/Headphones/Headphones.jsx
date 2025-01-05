@@ -1,13 +1,9 @@
-
 import './Headphones.scss'
+
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import ShopCards from '../../components/ShopCards/ShopCards';
-
 import headphonesData from '../../data/productsData/headphonesData';
-
-
-
 
 const Headphones = () => {
     return (
