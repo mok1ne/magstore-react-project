@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom'
+import { useSelector } from 'react-redux';
 
 import { IoIosMenu } from "react-icons/io";
 import { IoMdClose } from "react-icons/io";
@@ -8,11 +9,12 @@ import logo from '../../assets/logo/logo-image-black.png'
 import './BurgerMenu.scss'
 
 
+
 const BurgerMenu = () => {
     const [isActive, setIsActive] = useState(false)
-
+    const deliveryItems = useSelector((state) => state.cart.deliveryItems);
     const toggleMenu = () => {
-        setIsActive(!isActive); // Переключаем состояние
+        setIsActive(!isActive); 
     };
     return (
         <>
@@ -32,6 +34,8 @@ const BurgerMenu = () => {
                     <li className='header__list'><NavLink to='/Laptops'>Ноутбуки</NavLink></li>
                     <li className='header__list'><NavLink to='/Headphones'>Наушники</NavLink></li>
                     <li className='header__list'><NavLink to='/Accessories'>Аксессуары</NavLink></li>
+                    <li className='header__list'><NavLink to='/Delivery'>Доставки</NavLink>
+                    {deliveryItems.length == 0 ? '' : <p className='count__info count__info--right count__info--burger'>{deliveryItems.length}</p>}</li>
                 </ul>
             </div>
 

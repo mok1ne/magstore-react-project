@@ -12,6 +12,7 @@ const Header = () => {
     const { items } = useSelector(state => state.cart)
 
     const totalCount = items.reduce((sum, item) => sum + item.count, 0)
+    const deliveryItems = useSelector((state) => state.cart.deliveryItems);
 
     return (
         <header className='header'>
@@ -31,6 +32,8 @@ const Header = () => {
                                 <li className='header__list'><NavLink to='/Phones'>Смартфоны</NavLink></li>
                                 <li className='header__list'><NavLink to='/Laptops'>Ноутбуки</NavLink></li>
                                 <li className='header__list'><NavLink to='/Headphones'>Наушники</NavLink></li>
+                                <li className='header__list'><NavLink to='/Delivery'>Доставки</NavLink>
+                                    {deliveryItems.length == 0 ? '' : <p className='count__info count__info--right'>{deliveryItems.length}</p>}</li>
                             </ul>
                         </div>
 
@@ -40,7 +43,7 @@ const Header = () => {
                             <NavLink to='/bag'>
                                 <div className="header__bag" style={{ color: '#ffffffcc' }}>
                                     <IoBag size={24} />
-                                    {totalCount == 0 ? '' : <div className='bag__info'>{totalCount}</div>}
+                                    {totalCount == 0 ? '' : <div className='count__info'>{totalCount}</div>}
 
 
                                 </div>

@@ -1,0 +1,16 @@
+.delivery-page {
+    margin-top: 80px;
+    img {
+        max-width: 250px;
+    }
+
+    .delivery-list {
+        display: flex;
+        align-items: center;
+        gap: 50px;  
+        max-width: fit-content;
+    }
+    .delivery-item   {
+        text-align: center;
+    }
+}

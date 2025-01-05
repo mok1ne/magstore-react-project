@@ -8,6 +8,7 @@ import Phones from "./pages/Phones/Phones"
 import Laptops from "./pages/Laptops/Laptops"
 import Headphones from "./pages/Headphones/Headphones"
 import Accessories from "./pages/Accessories/Accessories"
+import Delivery from './pages/Delivery/Delivery'
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
         <Route path='/laptops' element={<Laptops />} />
         <Route path='/headphones' element={<Headphones />} />
         <Route path='/accessories' element={<Accessories />} />
+        <Route path="/delivery" element={<Delivery />} />
       </Routes>
     </>
   )

@@ -7,6 +7,34 @@
     backdrop-filter: blur(10px);
     z-index: 100;
 
+    .count__info {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        bottom: 0;
+        right: -2px;
+        font-size: 10px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: #ffffff;
+        color: black;
+        font-weight: 600;
+
+        &--right {
+            right: -20px!important;
+        }
+
+        &--burger {
+            background-color: black;
+            color: white;
+            right: -25px!important;
+            top: 3px;
+        }
+    }
+
     &__inner {
         height: 44px;
     }
@@ -31,6 +59,10 @@
             font-size: 14px;
             font-weight: 400;
             color: #ffffffcc;
+
+            li {
+                position: relative;
+            }
         }
 
     }
@@ -48,23 +80,6 @@
 
     &__bag {
         position: relative;
-    }
-
-    .bag__info {
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        bottom: 0;
-        right: -2px;
-        font-size: 10px;
-        width: 15px;
-        height: 15px;
-        border-radius: 50%;
-        background-color: rgb(255, 255, 255);
-        color: black;
-        font-weight: 600;
     }
 }
 

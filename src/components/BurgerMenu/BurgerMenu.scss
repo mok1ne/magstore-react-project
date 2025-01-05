@@ -32,6 +32,12 @@
         font-size: 20px;
         font-weight: 600;
 
+        li {
+            display: flex;
+            position: relative;
+            width: fit-content;
+        }
+
         .header__list-burger--surfboat {
             img {
                 width: 40px !important;
