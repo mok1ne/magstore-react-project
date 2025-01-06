@@ -5,7 +5,7 @@ import { addItem, minusItem, removeItem } from '../../redux/slices/cartSlice';
 import { IoMdClose } from "react-icons/io";
 
 const BagItem = ({ id, title, price, image, rom, color, noice, count }) => {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch() 
 
     const onClickPlus = () => {
         dispatch(

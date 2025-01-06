@@ -1,43 +1,64 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import './Delivery.scss';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
+import { removeDeliveryItem } from '../../redux/slices/cartSlice';
+
+import { IoMdClose } from "react-icons/io";
 
 const Delivery = () => {
     const deliveryItems = useSelector((state) => state.cart.deliveryItems);
+    const dispatch = useDispatch()
+
+    const onClickRemove = (id, color, rom) => {
+        dispatch(
+            removeDeliveryItem({
+                id,
+                color,
+                rom,
+            })
+        );
+    };
+
+
+
 
     return (
 
         <div className='wrapper'>
             <Header />
             <div className="delivery-page">
-            <h2>Товары в доставке</h2>
-            {deliveryItems.length === 0 ? (
-                <p>Пока нет заказов на доставку.</p>
-            ) : (
-                deliveryItems.map((delivery, index) => (
-                    <div key={index} className="delivery-order">
-                        <h3>Заказ #{index + 1}</h3>
-                        <ul className="delivery-list">
-                            {delivery.items.map((item) => (
-                                <li key={`${item.id}-${item.color}`} className="delivery-item">
-                                    <img src={item.image} alt={item.title} />
-                                    <div>
-                                        <h3>{item.title}</h3>
-                                        <p>Количество: {item.count}</p>
-                                        <p>Цена: {item.price * item.count} ₽</p>
-                                    </div>
-                                </li>
-                            ))}
-                        </ul>
-                        <p className="delivery-total">Итоговая сумма: {delivery.totalPrice} ₽</p>
-                    </div>
-                ))
-            )}
-        </div>
-                <Footer/>
+                <h2>Товары в доставке</h2>
+                {deliveryItems.length === 0 ? (
+                    <p className='length0'>Пока нет заказов на доставку.</p>
+                ) : (
+                    deliveryItems.map((delivery, index) => (
+                        <div key={index} className="delivery-order">
+                            <h3>Заказ №{index + 1}</h3>
+                            <ul className="delivery-list">
+                                {delivery.items.map((item) => (
+                                    <li key={`${item.id}-${item.color}`} className="delivery-item">
+                                        <img src={item.image} alt={item.title} />
+                                        <div>
+                                            <h4>{item.title}</h4>
+                                            <p>{item.color}</p>
+                                            {item.rom == null ? '' : <p>{item.rom >= 1 && item.rom <= 10 ? `${item.rom}TB` : `${item.rom}GB`}</p>}
+                                            <p>Количество: {item.count}</p>
+                                            <p>Цена: {item.price * item.count} ₽</p>
+                                            <button onClick={() => onClickRemove(item.id, item.color, item.rom)}><IoMdClose /></button>
+
+                                        </div>
+                                    </li>
+                                ))}
+                            </ul>
+                            <p className="delivery-total">Итоговая сумма: {delivery.totalPrice} ₽</p>
+                        </div>
+                    ))
+                )}
+            </div>
+            <Footer />
         </div>
     );
 };
