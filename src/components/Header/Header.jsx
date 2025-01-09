@@ -3,8 +3,6 @@ import { NavLink } from 'react-router-dom'
 import { IoBag } from "react-icons/io5";
 import { useSelector } from 'react-redux';
 
-
-
 import logo from '../../assets/logo/logo-image-white.png'
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
 

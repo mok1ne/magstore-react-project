@@ -19,10 +19,14 @@ const ShopCards = ({ data }) => {
     const filterByPrice = (min, max) => {
         const filtered = data.filter((item) => {
             const defaultConfig = item.configure[0];
-            const price = item.prices[defaultConfig.ROM];
+            let price
+            { item.prices[defaultConfig.ROM] === undefined ? price = item.price : price = item.prices[defaultConfig.ROM]; }
             return price >= min && price <= max;
+
         });
         setFilteredData(filtered);
+
+
     };
     const ratingSort = () => {
         const sorterArr = [...filteredData];
@@ -32,8 +36,12 @@ const ShopCards = ({ data }) => {
     const priceSortLowest = () => {
         const sorterArr = [...filteredData];
         sorterArr.sort((a, b) => {
-            const priceA = a.prices[a.configure[0].ROM];
-            const priceB = b.prices[b.configure[0].ROM];
+            
+            
+            let priceA = a.prices[a.configure[0].ROM];
+            let priceB = b.prices[b.configure[0].ROM];
+            {priceA === undefined ? priceA = a.price : ''}
+            {priceB === undefined ? priceB = b.price : ''}
             return priceA - priceB;
         });
         setFilteredData(sorterArr);
@@ -41,8 +49,10 @@ const ShopCards = ({ data }) => {
     const priceSortHigh = () => {
         const sorterArr = [...filteredData];
         sorterArr.sort((a, b) => {
-            const priceA = a.prices[a.configure[0].ROM];
-            const priceB = b.prices[b.configure[0].ROM];
+            let priceA = a.prices[a.configure[0].ROM];
+            let priceB = b.prices[b.configure[0].ROM];
+            {priceA === undefined ? priceA = a.price : ''}
+            {priceB === undefined ? priceB = b.price : ''}
             return priceB - priceA;
         });
         setFilteredData(sorterArr);

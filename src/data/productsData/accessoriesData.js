@@ -1,4 +1,4 @@
-const headphonesData = [
+const accessoriesData = [
     {
         id: 1,
         rating: 92,
@@ -186,4 +186,4 @@ const headphonesData = [
 
 
 
-export default headphonesData
+export default accessoriesData

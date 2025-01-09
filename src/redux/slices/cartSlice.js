@@ -68,21 +68,25 @@ const cartSlice = createSlice({
             state.totalPrice = 0;
         },
         removeDeliveryItem: (state, action) => {
-            const { id, color, rom } = action.payload;
+            const { id, color, rom, index } = action.payload;
 
-            state.deliveryItems = state.deliveryItems
-                .map((delivery) => {
-                    const filteredItems = delivery.items.filter(
-                        (item) => !(item.id === id && item.color === color && item.rom === rom)
-                    );
-                    return {
-                        ...delivery,
-                        items: filteredItems,
-                        totalPrice: filteredItems.reduce((sum, item) => sum + item.price * item.count, 0),
-                    };
-                })
-                .filter((delivery) => delivery.items.length > 0);
+            const targetDelivery = state.deliveryItems[index];
+
+            const filteredItems = targetDelivery.items.filter(
+                (item) => !(item.id === id && item.color === color && item.rom === rom)
+            );
+
+            state.deliveryItems[index] = {
+                ...targetDelivery,
+                items: filteredItems,
+                totalPrice: filteredItems.reduce((sum, item) => sum + item.price * item.count, 0),
+            };
+
+            state.deliveryItems = state.deliveryItems.filter(
+                (delivery) => delivery.items.length > 0
+            );
         },
+
 
 
 

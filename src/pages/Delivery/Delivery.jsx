@@ -12,12 +12,13 @@ const Delivery = () => {
     const deliveryItems = useSelector((state) => state.cart.deliveryItems);
     const dispatch = useDispatch()
 
-    const onClickRemove = (id, color, rom) => {
+    const onClickRemove = (id, color, rom, index, type ) => {
         dispatch(
             removeDeliveryItem({
                 id,
                 color,
                 rom,
+                index,
             })
         );
     };
@@ -46,14 +47,15 @@ const Delivery = () => {
                                             <p>{item.color}</p>
                                             {item.rom == null ? '' : <p>{item.rom >= 1 && item.rom <= 10 ? `${item.rom}TB` : `${item.rom}GB`}</p>}
                                             <p>Количество: {item.count}</p>
+                                            {item.type == null ? '' : <p>{item.type}</p>}
                                             <p>Цена: {item.price * item.count} ₽</p>
-                                            <button onClick={() => onClickRemove(item.id, item.color, item.rom)}><IoMdClose /></button>
+                                            <button onClick={() => onClickRemove(item.id, item.color, item.rom, index)}><IoMdClose /></button>
 
                                         </div>
                                     </li>
                                 ))}
                             </ul>
-                            <p className="delivery-total">Итоговая сумма: {delivery.totalPrice} ₽</p>
+                            <p className="delivery-total">Итоговая сумма заказа: {delivery.totalPrice} ₽</p>
                         </div>
                     ))
                 )}

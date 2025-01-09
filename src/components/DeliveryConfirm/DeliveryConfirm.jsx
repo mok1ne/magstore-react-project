@@ -1,13 +1,15 @@
-import "../ShopMessage/ShopMessage.scss";
+import "./DeliveryConfirm.scss"
 
-const ShopMessage = () => {
+import React from 'react'
+
+const DeliveryConfirm = () => {
     return (
-        <div className="shop-message">
-            <div className="shop-message__info">
+        <div className="delivery-message">
+            <div className="delivery-message__info">
                 <h2>Заказ оформлен!</h2>
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default ShopMessage;
+export default DeliveryConfirm

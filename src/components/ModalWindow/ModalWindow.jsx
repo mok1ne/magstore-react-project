@@ -18,6 +18,7 @@ const ModalWindow = ({ isModalOpen, selectedProduct, closeModal }) => {
     const [showMessage, setShowMessage] = useState(false);
     const [messageData, setMessageData] = useState(null);
     const noice = selectedProduct.configure[0].noice
+    const type = selectedProduct.configure[0].type
     const construction = selectedProduct.configure[0].construction
     let currentPrice = selectedProduct.prices[selectedRom];
     { selectedProduct.prices[selectedRom] == null ? currentPrice = selectedProduct.price : '' }
@@ -29,6 +30,7 @@ const ModalWindow = ({ isModalOpen, selectedProduct, closeModal }) => {
             title: selectedProduct.title,
             price: currentPrice,
             image: currentImage,
+            type: type,
             rom: selectedRom,
             noice: noice,
             construction: construction,
@@ -49,12 +51,16 @@ const ModalWindow = ({ isModalOpen, selectedProduct, closeModal }) => {
         setSelectedRom(rom);
     };
 
-
+    const handleOverlayClick = (e) => {
+        if (e.target.classList.contains ('modal')) {
+            closeModal()
+        }
+    }
 
 
 
     return (
-        <div className="modal">
+        <div className="modal" onClick={handleOverlayClick}>
             <div className="modal__content">
 
                 <button className='close-btn' onClick={closeModal}><IoMdClose size='20' />
@@ -81,6 +87,7 @@ const ModalWindow = ({ isModalOpen, selectedProduct, closeModal }) => {
 
                                         </div></>
                                 }
+                                {type == null ? '' : <p>Тип: {type}</p>}
                                 {noice == null ? '' : <p>Шумоподавление: {noice}</p>}
                                 {construction == null ? '' : <p>Конструкция: {construction}</p>}
 

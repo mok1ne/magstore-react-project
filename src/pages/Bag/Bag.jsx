@@ -5,15 +5,17 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import BagItem from "../../components/BagItem/BagItem";
 import DeliveryModal from '../../components/DeliveryModal/DeliveryModal';
+import DeliveryConfirm from '../../components/DeliveryConfirm/DeliveryConfirm';
 
 
 import './Bag.scss';
 
 const Bag = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [showMessage, setShowMessage] = useState(false);
     const { totalPrice } = useSelector((state) => state.cart);
     const items = useSelector((state) => state.cart.items);
-    const totalCount = items.reduce((acc, item) => acc + item.count, 0); 
+    const totalCount = items.reduce((acc, item) => acc + item.count, 0);
 
     const [selectedProduct, setSelectedProduct] = useState(null);
 
@@ -24,6 +26,10 @@ const Bag = () => {
     const closeModal = () => {
         setIsModalOpen(false);
         setSelectedProduct(null);
+    };
+    const handleOrderComplete = () => {
+        setShowMessage(true);
+        setTimeout(() => setShowMessage(false), 3000);
     };
     return (
         <>
@@ -48,6 +54,7 @@ const Bag = () => {
                             </div>
                         </>
                     )}
+                
                 </div>
             </div>
             <DeliveryModal
@@ -56,7 +63,9 @@ const Bag = () => {
                 selectedProduct={selectedProduct}
                 isModalOpen={isModalOpen}
                 closeModal={closeModal}
+                onOrderComplete={handleOrderComplete}
             />
+            {showMessage && <DeliveryConfirm />}
             <Footer />
         </>
     );
