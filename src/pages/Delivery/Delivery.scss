@@ -26,6 +26,7 @@
     .delivery-list {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
         gap: 50px;
         max-width: fit-content;
     }
