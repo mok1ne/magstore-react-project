@@ -74,8 +74,14 @@ const DeliveryModal = ({ totalPrice, closeModal, isModalOpen, selectedProduct, t
         closeModal(true);
     };
 
+    const handleOverlayClick = (e) => {
+        if (e.target.classList.contains ('delivery')) {
+            closeModal()
+        }
+    }
+
     return (
-        <div className='delivery'>
+        <div className='delivery' onClick={handleOverlayClick}>
             <div className="delivery__content">
                 <button className='close-btn' onClick={closeModal}><IoMdClose size='20' /></button>
                 <img className='logo-img' src={logo} alt="" />

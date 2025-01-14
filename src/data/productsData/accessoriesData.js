@@ -36,7 +36,7 @@ const accessoriesData = [
         prices: {
         },
 
-        price: 55000
+        price: 1000
 
     },
 ]
