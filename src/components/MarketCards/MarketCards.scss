@@ -28,16 +28,7 @@
             background-size: cover;
             background-image: url(../../assets/images/home/promo_macbook_air_m3__e43jegok3wuq_large.jpg);
         }
-        a:nth-child(3) .market__card-wrapper {
-            position: absolute;
-            width: 100%;
-            height: var(--content-height);
-            background-position: center;
-            background-repeat: no-repeat;
-            z-index: 1;
-            background-size: cover;
-            background-image: url(https://avatars.mds.yandex.net/get-mpic/12525950/2a0000018d70a881f0f3d7b51338b3d482a9/orig);
-        }
+
     }
 
     &__card {
